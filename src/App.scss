@@ -8,7 +8,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Plus Jakarta Sans", sans-serif;
-	// position: relative;
 }
 
 body {
@@ -26,14 +25,6 @@ li {
 
 main {
 	margin-top: 4rem;
-}
-
-.marquee-tag {
-	// pos
-	position: absolute;
-	white-space: nowrap;
-	overflow: hidden;
-	animation: scrolling-text 20s linear infinite;
 }
 
 @keyframes scrolling-text {
