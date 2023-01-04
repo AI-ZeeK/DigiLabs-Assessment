@@ -1,0 +1,237 @@
+@use "./abstracts/media-query" as *;
+@use "./abstracts/mixins" as *;
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.6rem 1.8rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background-color: #fffaff;
+	z-index: 20;
+	.mobile {
+		display: none;
+	}
+	.links-section,
+	.auth-section,
+	.logo-box {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.logo-box {
+		.logo-text {
+			font-weight: 600;
+		}
+		.logo {
+			width: 2rem;
+			height: 2rem;
+			background-color: #9d0aff;
+			border-radius: 8px;
+			cursor: pointer;
+			position: relative;
+
+			transition: 300ms ease;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 25%;
+				left: 8px;
+				width: 1rem;
+				height: 6px;
+				background-color: white;
+				border-radius: 2px;
+				transition: 200ms ease;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 58%;
+				left: 8px;
+				width: 1rem;
+				height: 5.5px;
+				background-color: white;
+				border-radius: 2px;
+				transition: 200ms ease;
+			}
+		}
+	}
+
+	.links-section {
+		li {
+			padding: 0.6rem 0.8rem;
+			cursor: pointer;
+			font-size: 0.9rem;
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: "";
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				height: 4px;
+				background-color: #9d0aff;
+				transition: 300ms ease;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
+
+	.auth-section {
+		// outline: 1px solid blue;
+		font-size: 0.9rem;
+
+		div {
+			padding: 0.6rem 1rem;
+			cursor: pointer;
+			// outline: 1px solid red;
+		}
+		.cart-box {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			gap: 0.2rem;
+			color: #9d0aff;
+			font-size: 14px;
+			position: relative;
+			&::after {
+				position: absolute;
+				content: "";
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				height: 4px;
+				background-color: #9d0aff;
+				transition: 300ms ease;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+			.icon {
+				font-size: 1.5em;
+			}
+		}
+
+		.login {
+			border: 1px solid #9d0aff;
+			color: #9d0aff;
+			border-radius: 14px;
+			transition: 300ms ease;
+
+			&:hover {
+				background-color: #9d0aff;
+				color: #fff;
+
+				@include shadow-sm;
+			}
+		}
+		.get-started {
+			border: 1px solid #9d0aff;
+			background-color: #9d0aff;
+			color: white;
+			border-radius: 14px;
+			transition: 300ms ease;
+			&:hover {
+				background-color: #fff;
+				color: #9d0aff;
+				@include shadow-sm;
+			}
+		}
+	}
+}
+
+@include small-screen {
+	.navbar {
+		padding: 0.4rem 1rem !important;
+
+		.links-section {
+			display: none !important;
+		}
+		.auth-section {
+			gap: 0.4rem !important;
+			.menu-bar {
+				background-color: #9d0aff;
+				display: flex !important;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				font-size: 1.2rem;
+				padding: 0.5rem !important;
+				border-radius: 8px;
+				position: relative;
+				@include transition-sm;
+
+				&:hover {
+					@include shadow-sm;
+					background: #fff;
+					color: #9d0aff;
+					position: relative;
+					outline: 1px solid #9d0aff;
+				}
+			}
+		}
+	}
+
+	.not-mobile {
+		display: none !important;
+	}
+	.mobile {
+		display: block !important;
+	}
+}
+@include medium-screen {
+	.navbar {
+		padding: 0.4rem 1rem !important;
+		gap: 1rem;
+		.links-section {
+			gap: 0.2rem;
+		}
+		.auth-section {
+			gap: 0.4rem !important;
+			.menu-bar {
+				background-color: #9d0aff;
+				display: flex !important;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				font-size: 1.2rem;
+				padding: 0.5rem !important;
+				border-radius: 8px;
+				position: relative;
+				@include transition-sm;
+
+				&:hover {
+					@include shadow-sm;
+					background: #fff;
+					color: #9d0aff;
+					position: relative;
+					outline: 1px solid #9d0aff;
+				}
+			}
+		}
+	}
+
+	.not-mobile {
+		display: none !important;
+	}
+	.mobile {
+		display: block !important;
+	}
+}
+@include huge-screen {
+	.navbar {
+		padding: 0.6rem 10rem !important;
+	}
+}
