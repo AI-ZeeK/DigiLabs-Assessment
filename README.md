@@ -1,2 +1,9 @@
 # DigiLabs-Assessment
- Frontend Code Assesment
+
+Frontend Code Assesment
+
+### Tech used
+
+- Reactjs
+- Typescript - React
+- SCSS
