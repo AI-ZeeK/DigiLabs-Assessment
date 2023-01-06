@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import web1 from "../assets/web1.png";
 import web2 from "../assets/web2.png";
@@ -20,15 +20,50 @@ import loogo from "../assets/grayte.png";
 import loogoa from "../assets/one box.png";
 import banner from "../assets/banner.png";
 import { IoIosSend } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { setCounter, setIsModal, setShowCount } from "../features/AppSlice";
+import Modal from "./Modal";
 type Props = {};
 
 const Main = (props: Props) => {
+	const { counter, showCount, isModal, responseData } = useSelector(
+		(store: any) => store.app
+	);
+	const dispatch = useDispatch();
+	const handleReqClick = () => {
+		dispatch(setCounter());
+		dispatch(setShowCount(true));
+	};
+
+	const handleUpdate = (e: any) => {
+		e.preventDefault();
+		dispatch(setIsModal());
+	};
+	useEffect(() => {
+		if (showCount) {
+			setTimeout(() => {
+				dispatch(setShowCount(false));
+				console.log("yelow");
+			}, 4000);
+		}
+		console.log("green");
+	}, [showCount]);
 	return (
 		<div>
 			<section className="text-area-section">
+				<div className={showCount ? "new-box active" : "new-box"}>
+					<h1>{counter}</h1>
+				</div>
+				<div className={isModal ? "modal" : "modal inactive"}>
+					<Modal />
+				</div>
 				<div className="text-box">
 					<div className="head-text-box">
-						<h2 className="head-text">Save More and get your finances right</h2>
+						<h2 className="head-text">
+							{responseData.length
+								? responseData.map((item: any): any => item.user.text)
+								: "Save More and get your finances right"}
+						</h2>
 					</div>
 					<div className="small-text-box">
 						<small>
@@ -38,7 +73,10 @@ const Main = (props: Props) => {
 						</small>
 					</div>
 					<div className="btn-box">
-						<button>Request a demo</button>
+						<button onClick={handleReqClick}>Request a demo</button>
+					</div>
+					<div className="btn-box" onClick={handleUpdate}>
+						<button>Update Items</button>
 					</div>
 				</div>
 			</section>

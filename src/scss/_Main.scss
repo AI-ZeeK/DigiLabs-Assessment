@@ -6,6 +6,28 @@
 	padding: 5rem 3rem 3rem;
 	text-align: center;
 	color: #151531;
+	position: relative;
+
+	.new-box {
+		position: absolute;
+		top: 20%;
+		left: 5%;
+		width: 0;
+		height: 0;
+		background: #9d0aff;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3rem;
+		@include shadow-md;
+		@include transition-sm;
+
+		&.active {
+			width: 6rem;
+			height: 6rem;
+		}
+	}
 	.text2-box {
 		padding: 0.2rem 6rem;
 	}

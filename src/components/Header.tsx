@@ -1,15 +1,32 @@
 import React from "react";
 import { IoIosCart } from "react-icons/io";
 import { VscThreeBars } from "react-icons/vsc";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const Header = (props: Props) => {
+	const { responseData } = useSelector((store: any) => store.app);
 	return (
 		<>
 			<nav className="navbar">
 				<div className="logo-box">
-					<div className="logo"></div>
+					{responseData.length ? (
+						responseData.map((item: any) => {
+							const itemImage = JSON.parse(item.user.image);
+							return (
+								<img
+									className="head-image"
+									key={item.user._id}
+									src={itemImage.selectedFile}
+									alt=""
+								/>
+							);
+						})
+					) : (
+						<div className="logo"></div>
+					)}
+
 					<p className="logo-text">Pepper</p>
 				</div>
 				<ul className="links-section">

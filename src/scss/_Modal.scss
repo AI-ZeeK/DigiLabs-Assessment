@@ -1,0 +1,83 @@
+@use "./abstracts/media-query" as *;
+@use "./abstracts/mixins" as *;
+
+.modal {
+	position: fixed;
+	right: 0%;
+	top: 0%;
+	width: 100vw;
+	height: 100vh;
+	background-color: hsla(255, 50%, 90%, 0.4);
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	padding: 1rem;
+
+	@include transition-sm;
+	&.inactive {
+		opacity: 0;
+		display: none;
+	}
+
+	.modal-div {
+		background-color: #fffaff;
+		width: 100%;
+		max-width: 30rem;
+
+		padding: 2rem;
+		border-radius: 1.5rem;
+		@include shadow-md;
+
+		.modal-box {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+
+			.text-box {
+				textarea {
+					padding: 0.8rem 1rem;
+					outline: none;
+					font-size: 1.1rem;
+					border-radius: 0.2rem;
+				}
+			}
+			.file-box {
+				input {
+					padding: 0.8rem 1rem;
+					outline: none;
+					font-size: 1.1rem;
+					border-radius: 0.2rem;
+				}
+			}
+
+			.btn-box {
+				display: flex;
+				justify-content: space-around;
+				gap: 2rem;
+				button {
+					border-radius: 4px;
+					width: 100%;
+				}
+
+				.cancel {
+					background-color: red;
+				}
+			}
+		}
+	}
+}
+
+.file {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.file > input[type="file"] {
+	// // display: none;
+	// padding: 1rem !important;
+	// color: red;
+}
