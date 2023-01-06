@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"start": "node ./dist/App.js",
 		"dev": "tsc-watch --onSuccess \"node  ./dist/App.js\""
 	},
 	"keywords": [],
