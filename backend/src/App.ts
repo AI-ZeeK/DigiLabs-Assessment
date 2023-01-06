@@ -1,8 +1,8 @@
-dotenv.config();
 import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
 import cors from "cors";
+dotenv.config();
 const color = colors;
 import connectDB from "./config/db.js";
 const app = express();
