@@ -35,19 +35,19 @@ const Main = (props: Props) => {
 		dispatch(setShowCount(true));
 	};
 
-	const handleUpdate = (e: any) => {
-		e.preventDefault();
-		dispatch(setIsModal());
-	};
-	useEffect(() => {
-		if (showCount) {
-			setTimeout(() => {
-				dispatch(setShowCount(false));
-				console.log("yelow");
-			}, 4000);
-		}
-		console.log("green");
-	}, [showCount]);
+	// const handleUpdate = (e: any) => {
+	// 	e.preventDefault();
+	// 	dispatch(setIsModal());
+	// };
+	// useEffect(() => {
+	// 	if (showCount) {
+	// 		setTimeout(() => {
+	// 			dispatch(setShowCount(false));
+	// 			console.log("yelow");
+	// 		}, 4000);
+	// 	}
+	// 	console.log("green");
+	// }, [showCount]);
 	return (
 		<div>
 			<section className="text-area-section">
@@ -73,11 +73,11 @@ const Main = (props: Props) => {
 						</small>
 					</div>
 					<div className="btn-box">
-						<button onClick={handleReqClick}>Request a demo</button>
+						<button>Request a demo</button>
 					</div>
-					<div className="btn-box" onClick={handleUpdate}>
+					{/* <div className="btn-box" onClick={handleUpdate}>
 						<button>Update Items</button>
-					</div>
+					</div> */}
 				</div>
 			</section>
 			<section className="big-banner-section">
@@ -414,7 +414,7 @@ const Main = (props: Props) => {
 							</div>
 						</div>
 					</div>
-					<div className="info-texts-box">
+					<div className="info-texts-box ">
 						<h3>Manage and Track Your Projects</h3>
 						<small>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus ad
@@ -441,7 +441,7 @@ const Main = (props: Props) => {
 							</div>
 						</div>
 					</div>
-					<div className="info-texts-box order2">
+					<div className="info-texts-box ">
 						<h3>Easily manage your team's progress</h3>
 						<small>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus ad
@@ -472,11 +472,11 @@ const Main = (props: Props) => {
 					<div className="info-image-box">
 						<img src={loogoa} alt="logo" />
 					</div>
-					<div className="info-image-box">
+					<div className="info-image-box order3">
 						<img src={loogo} alt="logo" />
 					</div>
 
-					<div className="info-texts-box">
+					<div className="info-texts-box order2">
 						<h3>Simple financial overview for you</h3>
 						<small>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus ad

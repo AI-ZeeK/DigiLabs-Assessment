@@ -767,6 +767,13 @@
 	}
 }
 @include small-screen {
+
+	.order2{
+		order: 4 !important
+	}
+	.order3{
+		order: 5 !important
+	}
 	.small-banner-section {
 		padding: 4rem;
 		display: flex;
