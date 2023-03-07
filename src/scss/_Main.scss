@@ -20,7 +20,7 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 3rem;
-		@include shadow-md;
+		border: 1px solid #ccc;
 		@include transition-sm;
 
 		&.active {
@@ -311,7 +311,7 @@
 			gap: 1rem;
 			border-radius: 24px;
 			color: #151531;
-			@include shadow-sm;
+			border: 1px solid grey;
 
 			.info-head {
 				font-size: 1.4rem;
@@ -561,8 +561,7 @@
 			flex-direction: column;
 			gap: 1rem;
 			border-radius: 30px;
-			@include shadow-sm;
-
+			border :1px solid grey;
 			.stars {
 				color: #00f59b;
 				display: flex;
@@ -1034,7 +1033,7 @@
 			padding: 1.4rem !important;
 			gap: 0.4rem;
 			display: flex;
-			@include shadow-md;
+			border: 1px solid grey;
 			p {
 				font-size: 0.9rem;
 			}
